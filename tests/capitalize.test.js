@@ -1,16 +1,11 @@
+import { strict as assert } from 'node:assert'
 import capitalize from '../src/capitalize.js';
 
-if (capitalize('hello') !== 'Hello') {
-  throw new Error('Функция работает неверно - первая буква не стала большой!');
-}
+assert.equal(capitalize(''), '');
 
-if (capitalize('') !== '') {
-  throw new Error('Функция работает неверно - не выдала пустую строку!');
-}
+assert.equal(capitalize('hello'), 'Hello');
 
-if (capitalize('cat') !== 'cat') {
-  throw new Error('Функция работает неверно - первая буква не стала большой!');
-}
+assert.equal(capitalize('cat'), 'cat');
 
 console.log('Все тесты пройдены!');
 
